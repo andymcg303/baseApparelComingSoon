@@ -5,12 +5,22 @@ function validateEmail(email) {
 
 const emailForm = document.querySelector('#email-form');
 const emailInput = document.querySelector('#email-input');
+const iconError = document.querySelector('#icon-error');
+const emailErrorMsg = document.querySelector('#email-error-msg');
 
-emailForm.addEventListener('submit', () => {
+emailForm.addEventListener('submit', (e) => {
+    e.preventDefault();
     if (!validateEmail(emailInput.value)) {
         // display icon
-
+        iconError.style.display = 'block';
         // display message
-        alert('please enter a valid email');
+        emailErrorMsg.textContent = 'Please provide a valid email';
+    } else {
+        emailInput.value = '';
     }
 });
+
+emailInput.addEventListener('focus', () => {
+    iconError.style.display = "none";
+    emailErrorMsg.textContent = '';
+})

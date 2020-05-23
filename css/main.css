@@ -69,8 +69,7 @@ form {
 form:hover {
     border-color: hsl(0, 93%, 68%);
     border-width: 1.5px;
-    margin: -.5px;
-
+    margin-top: -1px;
 }
 
 input {
@@ -81,7 +80,7 @@ input {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
     color: hsl(0, 6%, 24%);
-    padding-left: 20px;  
+    padding-left: 20px;
 }
 
 input:focus {
@@ -94,6 +93,11 @@ input::placeholder {
     color: hsl(0, 36%, 90%);   
 }
 
+#icon-error {
+    margin: auto 12px auto 0;
+    display: none;
+}
+
 #email-button {
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     height: 50px;
@@ -104,6 +108,12 @@ input::placeholder {
 
 #email-button:focus {
     outline: none;
+}
+
+#email-error-msg {
+    height: 1em;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 
 .attribution { font-size: 11px; 
@@ -126,7 +136,7 @@ input::placeholder {
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     .main-container {
         flex-direction: column;
     }
@@ -145,7 +155,7 @@ input::placeholder {
     }
 
     .text-container {
-        margin: 50px 0 0 0;
+        margin: 50px 0 50px 0;
         width: 85%;
     }
 
@@ -155,10 +165,6 @@ input::placeholder {
 
     h1, p {
         text-align: center;
-    }
-
-    form {
-        margin-bottom: 50px;
     }
 
 }
